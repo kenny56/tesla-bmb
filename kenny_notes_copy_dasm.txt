@@ -1323,7 +1323,7 @@ StartInitMem: Callers: 0425           	; "StartInitMem"  various memory location
 ;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ; Jump Target - Callers: 0A23 
 0x0532 E4         CLR A 
-0x0533 F5 09      MOV  X09h, A      ;Null out 9, 10, 11 RAM locations
+0x0533 F5 09      MOV  X09h, A      ;Null out X09-X0B RAM locations
 0x0535 F5 0A      MOV  X0Ah, A
 0x0537 F5 0B      MOV  X0Bh, A
 0x0539 7F 01      MOV R7,  #0x01
