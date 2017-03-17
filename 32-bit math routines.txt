@@ -1,0 +1,13 @@
+There are several calls to a routine that uses 32-bit subtraction with Borrow, SUBB.  The purpose is to compare timer
+values and set/clear the Carry(Borrow) Flag as an indication of greater than or less than, and also
+return with the result of the calculation in R7.
+
+The routine is at x0130 and gets called from x0702 and x0BA2:
+
+x0702 enters with Carry set and deals with reading and storing data (@R1 location) from the UART call in x06D2, 
+
+x0BA2 has 2 callers, which enter with C=1 in x0B53 or C=0 in x0935
+    x0935 is related to Timer2 OverFlow and sets timer value to [FF,FF,FF,FF]
+    X0B53 deals with [X37-3A] in x06EE, or [0,0,(X08),(X09)] in x0918
+    
+So this generic math routine is used to evaluate different timer values used for various purposes, e.g. UART, SPI, W/D
