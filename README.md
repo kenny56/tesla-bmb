@@ -15,6 +15,7 @@ mark those over time.  Likely a keil C compiler was used.
 1230;
 
 Interesting Finds:
+
 the CRC-8 is done using a look-up table at 0C15;  
 the data bytes at 0B74 are the bq76 Register 00 status words;  
 sending x79 out the UART is a request to the BMS to reset the bq76;  
